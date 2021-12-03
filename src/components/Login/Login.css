@@ -1,0 +1,34 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/images/login_background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-weight: 600;
+}
+
+.login__button {
+  background-color: white;
+  width: 300px;
+  height: 50px;
+  border: 1px solid rgba(175, 174, 174, 0.575);
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login__button > a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  position: absolute;
+  width: 40px;
+  right: 15px;
+  top: 5px;
+}
