@@ -6,6 +6,7 @@ import {
   SET_ARTISTS_NAME,
   SET_ARTISTS_ALBUMS,
   SET_ISCHOOSEN,
+  REMOVE_TOKEN,
 } from "../ActionsTypes";
 
 export const initialState = {
@@ -33,6 +34,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         token: action.token,
+      };
+    case REMOVE_TOKEN:
+      return {
+        ...state,
+        token: null,
       };
     case SET_PLAYLISTS:
       return {

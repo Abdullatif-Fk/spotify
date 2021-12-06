@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import PlayList from "../PlayList/PlayList";
 import SideBar from "../SideBar/SideBar";
 import "./Player.css";
-function Player({ spotify }) {
+function Player() {
   return (
     <div className="player">
       <div className="player__body">

@@ -10,15 +10,12 @@ const spotify = new SpotifyWebApi();
 function App() {
   const [{ token }, dispatch] = useStateValue();
 
+  // const token = localStorage.getItem("token");
   useEffect(() => {
-    setUser(dispatch);
-    setPlaylist(dispatch);
+    setUser(dispatch, spotify);
+    setPlaylist(dispatch, spotify);
   }, [dispatch]);
-  return (
-    <div className="app">
-      {token ? <Player spotify={spotify} /> : <Login />}
-    </div>
-  );
+  return <div className="app">{token ? <Player /> : <Login />}</div>;
 }
 
 export default App;

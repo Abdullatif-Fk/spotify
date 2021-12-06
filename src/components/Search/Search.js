@@ -37,7 +37,6 @@ function Search() {
                 key={key}
                 onClick={() => {
                   setArtistsAlbums(token, artist.id, dispatch);
-                  console.log(albums, isChoosen);
                 }}
                 className="search__artist"
               >
