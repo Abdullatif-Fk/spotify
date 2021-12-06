@@ -35,7 +35,11 @@ function Album(album) {
 
       <div className="album__link">
         <small>
-          <a target="_blank" href={album.album.external_urls.spotify}>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={album.album.external_urls.spotify}
+          >
             Preview on Spotify
           </a>
         </small>

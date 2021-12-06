@@ -1,7 +1,6 @@
 import React from "react";
 import "./Artist.css";
 import StarIcon from "@mui/icons-material/Star";
-import Search from "@mui/icons-material/Search";
 
 function Artist({ artist }) {
   const ratingStars = () => {

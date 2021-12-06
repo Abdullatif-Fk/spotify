@@ -4,7 +4,6 @@ export const setArtistName = (artistName, dispatch) => {
     type: "SET_ARTISTS_NAME",
     artistName: artistName,
   });
-  // console.log(artistName);
 };
 export const setArtistsAlbums = (token, id, dispatch) => {
   console.log("hello");
@@ -14,7 +13,6 @@ export const setArtistsAlbums = (token, id, dispatch) => {
       axios
         .get(api, { headers: { Authorization: `Bearer ${token}` } })
         .then((res) => {
-          // console.log(res.data.items);
           dispatch({
             type: "SET_ARTISTS_ALBUMS",
             albums: res.data.items,

@@ -6,12 +6,12 @@ import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useStateValue } from "../../DataLayer";
 function SideBar() {
-  const [{ playlists }, dispatch] = useStateValue();
-  console.log(playlists.items);
+  const [{ playlists }] = useStateValue();
   return (
     <div className="sidebar">
       <img
         className="sidebar__logo"
+        alt=""
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
       />
       <SidebarOption Icon={HomeOutlinedIcon} title="Home" />

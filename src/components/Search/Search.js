@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Artist from "../Artist/Artist";
@@ -13,9 +13,6 @@ function Search() {
   const [{ artists, token, isChoosen, albums }, dispatch] = useStateValue();
   const [artistName, setArtist] = useState("");
 
-  useEffect(() => {
-    // handleChange();
-  }, []);
   const handleChange = (event) => {
     setArtist(event.target.value);
     setArtistName(artistName, dispatch);
