@@ -12,17 +12,16 @@ function App() {
   // const [token, setToken] = useState(null);
   const [{ user, token }, dispatch] = useStateValue();
   // const api = "https://api.spotify.com/v1/search?q=nancy&type=artist";
-  const api =
-    "https://api.spotify.com/v1/artists/0LnHdW6HMPoOlNdhG3DHjE/albums";
+  // const api =
+  //   "https://api.spotify.com/v1/artists/0LnHdW6HMPoOlNdhG3DHjE/albums";
   useEffect(() => {
-    axios
-      .get(api, { headers: { Authorization: `Bearer ${token}` } })
-      .then((res) => {
-        // console.log(res.data.artists);
-        console.log(res);
-      })
-      .catch((error) => console.log(error));
-
+    // axios
+    //   .get(api, { headers: { Authorization: `Bearer ${token}` } })
+    //   .then((res) => {
+    //     // console.log(res.data.artists);
+    //     console.log(res);
+    //   })
+    //   .catch((error) => console.log(error));
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
@@ -31,7 +30,6 @@ function App() {
         type: "SET_TOKEN",
         token: _token,
       });
-
       // setToken(_token);
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {

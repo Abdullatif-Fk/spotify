@@ -2,15 +2,18 @@
   background-color: white;
   color: black;
   width: 200px;
-  height: 280px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
-.artist > img {
-  height: 50%;
-}
+
 .artist__info {
+  height: 50%;
+  position: relative;
+  padding: 10px;
+}
+.artist > img {
   height: 50%;
 }
 .artist__info > p {
@@ -21,4 +24,7 @@
   color: gray;
 }
 .artist__rating {
+  position: absolute;
+  bottom: 10px;
+  color: rgb(173, 173, 35);
 }

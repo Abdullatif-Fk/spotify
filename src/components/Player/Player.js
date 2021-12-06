@@ -10,7 +10,7 @@ function Player({ spotify }) {
         <SideBar />
         <PlayList />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

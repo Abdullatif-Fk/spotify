@@ -3,51 +3,33 @@ import "./Search.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Artist from "../Artist/Artist";
 import { useStateValue } from "../../DataLayer";
-import axios from "axios";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  fetchSearchArtist,
+  setArtistName,
+  setArtistsAlbums,
+} from "../../Context/actions/Search";
+import Album from "../Album/Album";
 function Search() {
-  // const [artistsList, setArtistsList] = useState([]);
-  const [{ artists, token, isChoosen }, dispatch] = useStateValue();
-  const api = "https://api.spotify.com/v1/search?q=nancy&type=artist";
-  const chooseArtistHanler = (id) => {
-    if (id) {
-      axios
-        .get(`https://api.spotify.com/v1/artists/${id}/albums`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((res) => {
-          console.log(res.data);
-          // setArtistsList(res.data.artists.items);
-          // console.log(artistsList);
-          // dispatch({
-          //   type: "SET_ARTISTS",
+  const [{ artists, token, isChoosen, albums }, dispatch] = useStateValue();
+  const [artistName, setArtist] = useState("");
 
-          // });
-        })
-        .catch((error) => console.log(error));
-    }
-  };
   useEffect(() => {
-    if (token) {
-      axios
-        .get(api, { headers: { Authorization: `Bearer ${token}` } })
-        .then((res) => {
-          console.log(res.data.artists.items);
-          // setArtistsList(res.data.artists.items);
-          // console.log(artistsList);
-          dispatch({
-            type: "SET_ARTISTS",
-            artists: res.data.artists.items,
-          });
-        })
-        .catch((error) => console.log(error));
-    }
-    console.log(artists);
+    // handleChange();
   }, []);
+  const handleChange = (event) => {
+    setArtist(event.target.value);
+    setArtistName(artistName, dispatch);
+    fetchSearchArtist(token, dispatch, artistName);
+  };
   return (
     <div className="search">
       <div className="search__box">
-        <input type="text" name="" placeholder="Search for an artist..." />
+        <input
+          type="text"
+          name=""
+          placeholder="Search for an artist..."
+          onChange={handleChange}
+        />
         <SearchIcon className="search__icon" />
       </div>
       <div className="search__result">
@@ -56,7 +38,10 @@ function Search() {
             artists.map((artist, key) => (
               <div
                 key={key}
-                onClick={chooseArtistHanler(artist.id)}
+                onClick={() => {
+                  setArtistsAlbums(token, artist.id, dispatch);
+                  console.log(albums, isChoosen);
+                }}
                 className="search__artist"
               >
                 <Artist artist={artist} />
@@ -65,18 +50,15 @@ function Search() {
           ) : (
             <h4>type the artist name</h4>
           )
-        ) : (
-          <h4>bo choosen artist</h4>
-        )}
-        {/* {artists.length ? (
-          artists.map((artist, key) => (
-            <div className="search__artist">
-              <Artist artist={artist} key={key} />
+        ) : albums.length ? (
+          albums.map((album, key) => (
+            <div key={key} className="search__artist">
+              <Album album={album} />
             </div>
           ))
         ) : (
           <h4>type the artist name</h4>
-        )} */}
+        )}
       </div>
     </div>
   );

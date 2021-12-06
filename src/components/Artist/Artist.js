@@ -1,11 +1,25 @@
 import React from "react";
 import "./Artist.css";
 import StarIcon from "@mui/icons-material/Star";
+import Search from "@mui/icons-material/Search";
 
 function Artist({ artist }) {
-  artist.images.length
-    ? console.log(artist.images[0].url)
-    : console.log("no image");
+  const ratingStars = () => {
+    let rating = (artist.popularity * 5) / 100;
+    rating = parseInt(rating);
+    let array = [];
+    for (var i = 0; i < rating; i++) {
+      array.push(<StarIcon />);
+    }
+    return (
+      <>
+        {array.map((_, key) => (
+          <StarIcon key={key} />
+        ))}
+      </>
+    );
+  };
+
   return (
     <div className="artist">
       <img
@@ -21,13 +35,7 @@ function Artist({ artist }) {
         <small>
           {artist.followers.total} <span>followers</span>
         </small>
-        <div className="artist__rating">
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-        </div>
+        <div className="artist__rating">{ratingStars()}</div>
       </div>
     </div>
   );
