@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
+  border: 1px solid gray;
 }
 
 .artist__info {
@@ -15,6 +16,7 @@
 }
 .artist > img {
   height: 50%;
+  border-bottom: 1px solid gray;
 }
 .artist__info > p {
   font-weight: bold;

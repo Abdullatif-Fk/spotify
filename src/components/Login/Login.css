@@ -4,9 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets/images/login_background.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   font-weight: 600;
 }
 
@@ -20,10 +17,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(37, 36, 36);
 }
 .login__button > a {
   text-decoration: none;
-  color: black;
 }
 
 .logo {

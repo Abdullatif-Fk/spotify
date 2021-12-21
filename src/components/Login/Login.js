@@ -4,12 +4,12 @@ import "./Login.css";
 function Login() {
   return (
     <div className="login">
-      <div className="login__button">
-        <a href={loginUrl}>
+      <a href={loginUrl}>
+        <div className="login__button">
           Login
           <img className="logo" src="spotify_logo.png" alt="login" />
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
   );
 }
