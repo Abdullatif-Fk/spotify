@@ -55,6 +55,8 @@ function Search() {
         ) : (
           <h4>type the artist name</h4>
         )}
+        {console.log(albums)}
+        {console.log(artists)}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import "./Album.css";
 function Album(album) {
   const albumChoosen = {
-    imageUrl: album.album.images[0].url,
+    imageUrl: album.album.images[1].url,
     length: album.album.images.length,
     name: album.album.name,
     artistName: album.album.artists[0].name,

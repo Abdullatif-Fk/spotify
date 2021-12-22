@@ -21,9 +21,8 @@ export const initialState = {
   // token:
   //   "BQApDST-2R3NKBa7Gt91O3qd5MzH7IT-IBDc5PRDUFcjm1cMqSdUMPSzbgKZaoN4mAGMBgawHUhEoOFQlOK9FrHa3AqC23WeNqMv_Sqv36kmPB-JH1S82VIAqZmtXNkirXdoIkQZ7cFuOSlP_ata50uuEqilZjJvscfSIaxvMFJNOpwf25N-",
 };
-console.log(initialState.artists);
+
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case SET_USER:
       return {

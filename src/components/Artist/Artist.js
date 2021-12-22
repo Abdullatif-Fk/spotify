@@ -24,7 +24,7 @@ function Artist({ artist }) {
       <img
         src={
           artist.images.length
-            ? artist.images[0].url
+            ? artist.images[1].url
             : "https://images.macrumors.com/t/vMbr05RQ60tz7V_zS5UEO9SbGR0=/1600x900/smart/article-new/2018/05/apple-music-note.jpg"
         }
         alt=""

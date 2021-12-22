@@ -2,7 +2,7 @@
   background-color: white;
   color: black;
   width: 200px;
-  height: 260px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -10,13 +10,14 @@
 }
 
 .artist__info {
-  height: 50%;
+  height: 40%;
   position: relative;
   padding: 10px;
 }
 .artist > img {
-  height: 50%;
+  height: 60%;
   border-bottom: 1px solid gray;
+  object-fit: cover;
 }
 .artist__info > p {
   font-weight: bold;
