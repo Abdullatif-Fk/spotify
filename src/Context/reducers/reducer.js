@@ -7,6 +7,7 @@ import {
   SET_ARTISTS_ALBUMS,
   SET_ISCHOOSEN,
   REMOVE_TOKEN,
+  REMOVE_USER,
 } from "../ActionsTypes";
 
 export const initialState = {
@@ -18,8 +19,6 @@ export const initialState = {
   item: null,
   artistName: null,
   token: null,
-  // token:
-  //   "BQApDST-2R3NKBa7Gt91O3qd5MzH7IT-IBDc5PRDUFcjm1cMqSdUMPSzbgKZaoN4mAGMBgawHUhEoOFQlOK9FrHa3AqC23WeNqMv_Sqv36kmPB-JH1S82VIAqZmtXNkirXdoIkQZ7cFuOSlP_ata50uuEqilZjJvscfSIaxvMFJNOpwf25N-",
 };
 
 const reducer = (state, action) => {
@@ -37,7 +36,12 @@ const reducer = (state, action) => {
     case REMOVE_TOKEN:
       return {
         ...state,
-        token: null,
+        token: action.token,
+      };
+    case REMOVE_USER:
+      return {
+        ...state,
+        user: action.user,
       };
     case SET_PLAYLISTS:
       return {

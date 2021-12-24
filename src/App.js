@@ -9,9 +9,9 @@ import Header from "./components/Header/Header";
 
 const spotify = new SpotifyWebApi();
 function App() {
-  const [{ token }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
-  // const token = localStorage.getItem("token");
+  let token = localStorage.getItem("token");
   useEffect(() => {
     setUser(dispatch, spotify);
     setPlaylist(dispatch, spotify);

@@ -6,3 +6,4 @@ export const SET_ARTISTS_NAME = "SET_ARTISTS_NAME";
 export const SET_ARTISTS_ALBUMS = "SET_ARTISTS_ALBUMS";
 export const SET_ISCHOOSEN = "SET_ISCHOOSEN";
 export const REMOVE_TOKEN = "REMOVE_TOKEN";
+export const REMOVE_USER = "REMOVE_USER";

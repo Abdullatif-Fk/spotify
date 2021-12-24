@@ -10,9 +10,9 @@ import {
 } from "../../Context/actions/Search";
 import Album from "../Album/Album";
 function Search() {
-  const [{ artists, token, isChoosen, albums }, dispatch] = useStateValue();
+  const [{ artists, isChoosen, albums }, dispatch] = useStateValue();
   const [artistName, setArtist] = useState("");
-
+  const token = localStorage.getItem("token");
   const handleChange = (event) => {
     setArtist(event.target.value);
     setArtistName(artistName, dispatch);
@@ -55,8 +55,6 @@ function Search() {
         ) : (
           <h4>type the artist name</h4>
         )}
-        {console.log(albums)}
-        {console.log(artists)}
       </div>
     </div>
   );

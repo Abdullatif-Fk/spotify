@@ -8,6 +8,7 @@ function LogOut() {
     dispatch({
       type: "REMOVE_TOKEN",
     });
+    localStorage.removeItem("token");
   };
   return (
     <div className="logout">
